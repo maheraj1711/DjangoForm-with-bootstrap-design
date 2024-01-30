@@ -1,0 +1,21 @@
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<nav>
+    <a href="{% url 'myDashboard' %}">Home</a>
+    <a href="{% url 'studentHome' %}">Student</a>
+    <a href="{% url 'teacherHome' %}">Teacher</a>
+    <a href="{% url 'employeeHome' %}">Employee</a>
+    <a href="{% url 'Stuff' %}">Stuff</a>
+    <a href="{% url 'NurseHome' %}">Nurse</a>
+    <a  href="{% url 'logout' %}">Logout</a> 
+        {% else %}
+    <a href="{% url 'login' %}">Login</a>     
+    <a  href="{% url 'signup' %}">Signup</a>
+            
+        {% endif %}
+   
+</nav>
+
+
+{% endblock %}
